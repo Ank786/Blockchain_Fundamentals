@@ -5,7 +5,7 @@ pragma solidity ^0.4.0;
 contract Greeting {
     address creator; // address datatype stores account address
     string message;
-}
+
 function Greeting(string _message) {
     message = _message;
     creator = msg.sender;
@@ -16,4 +16,5 @@ function greet() constant returns (string) {
  
 function setGreeting(string _message) {
     message = _message;
+}
 }
