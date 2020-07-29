@@ -1,0 +1,41 @@
+Solidity Code :
+
+pragma solidity ^0.4.17 < 0.6.12;
+
+contract OpenHouse {
+    string public name;
+    int public seatNo;
+    string public batch;
+    int public socialStudies;
+    int public accounts;
+    int public communicationSkills;
+    int public law;
+    string public status;
+
+    function OpenHouse(string Name,string Batch,int SocialStudies,int Accounts,int CommunicationSkills,int Law,int SeatNo) public {
+        name = Name;
+        seatNo = SeatNo;
+        batch = Batch;
+        socialStudies = SocialStudies;
+        accounts = Accounts;
+        communicationSkills = CommunicationSkills;
+        law = Law;
+		int Total_Marks = SocialStudies + Accounts + CommunicationSkills + Law;
+		if (((Total_Marks * 100)/400) > 32)
+			{
+				status = "Pass";
+			}
+		else
+		{
+			status = "Fail";
+		}
+        
+    }
+    
+    function getOpenHouse() view public returns(string,int,string,string) {
+        return(name,seatNo,batch,status);
+    }
+}
+
+
+Contract address : 0xd21d8af4a6785f02e0a0eb787e7fb4b0649f417c
